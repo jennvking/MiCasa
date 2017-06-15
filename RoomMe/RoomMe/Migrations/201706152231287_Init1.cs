@@ -3,7 +3,7 @@ namespace RoomMe.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class fixcasdel : DbMigration
+    public partial class Init1 : DbMigration
     {
         public override void Up()
         {
@@ -55,6 +55,7 @@ namespace RoomMe.Migrations
                         DateOfBirth = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         ZipCode = c.Int(nullable: false),
                         Phone = c.String(),
+                        Image = c.String(),
                         Listing_ListingID = c.Int(),
                     })
                 .PrimaryKey(t => t.UserId)
@@ -82,7 +83,6 @@ namespace RoomMe.Migrations
                         MessageID = c.Int(nullable: false, identity: true),
                         Subject = c.String(),
                         Body = c.String(),
-                        DateCreated = c.DateTime(nullable: false),
                         ConvoId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.MessageID)
